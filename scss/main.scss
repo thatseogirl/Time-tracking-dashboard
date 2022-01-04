@@ -1,0 +1,276 @@
+$primary-color: hsl(226, 43%, 10%);
+$font-stack: Rubik, sans-serif;
+@mixin font-weight($weight) {
+    $weights: (
+        light: 300,
+        normal: 400,
+        medium: 500)
+ }
+$Blue: hsl(246, 80%, 60%);
+$work: hsl(15, 100%, 70%);
+$play: hsl(195, 74%, 62%);
+$study: hsl(348, 100%, 68%);
+$exercise: hsl(145, 58%, 55%);
+$social: hsl(264, 64%, 52%);
+$selfcare: hsl(43, 84%, 65%);
+$DarkBlue: hsl(235, 46%, 20%);
+$DesaturatedBlue: hsl(235, 45%, 61%);
+$PaleBlue: hsl(236, 100%, 87%);
+body{
+    background: $primary-color;
+    width: 1000px;
+}
+.container{
+    width: 800px;
+    margin: auto;
+    padding-top: 50px;
+    padding-left: 100px;
+}
+.grid-section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding-top: 85px;
+    padding-left: 170px;
+    width: 600px;
+}
+#report{
+    grid-column: 1;
+    grid-row: 1/4 ;
+    position: relative;
+    top: 40px;
+    right: 30px;
+    width:180px;
+}
+#work, #play, #study, #exercise, #social, #selfcare{
+    width: 200px;
+    border-radius: 20px;
+    padding-top: 40px;
+}
+.TextArea{
+    background: $DarkBlue;
+    border-radius: 8px;
+    color: white;
+    height: 140px;
+    position: relative;
+    top: 18px;
+    left: 0px;
+    bottom: 0px;
+    width: 180px;  
+}
+.work-svg{
+    position: absolute;
+    z-index: -1;
+    background: $work;
+    border-radius: 10px;
+    width: 180px;
+}
+.play-svg{
+    position: absolute;
+    z-index: -1;
+    background: $play;
+    border-radius: 10px;
+    width: 180px;
+}
+.study-svg{
+    position: absolute;
+    z-index: -1;
+    background: $study;
+    border-radius: 10px;
+    width: 180px;
+}
+.social-svg{
+    position: absolute;
+    z-index: -1;
+    background: $social;
+    border-radius: 10px;
+    width: 180px;
+}
+.selfcare-svg{
+    position: absolute;
+    z-index: -1;
+    background: $selfcare;
+    border-radius: 10px;
+    width: 180px;
+}
+.exercise-svg{
+    position: absolute;
+    z-index: -1;
+    background: $exercise;
+    border-radius: 10px;
+    width: 180px;
+}
+.img-property{
+    width: 55px;
+    position: relative;
+    left: 110px;
+}
+.text1{
+    font-family: $font-stack;
+    @include font-weight(bold);
+    font-size: 12px;
+    margin-left: 20px;
+    position: relative;
+    top: 25px;
+}
+#playhrs,#studyhrs,#workhrs, #socialhrs, #selfcarehrs, #exercisehrs{
+    font-family: $font-stack;
+    @include font-weight(medium);
+    font-size: 30px;
+    margin-left: 20px;
+    position: relative;
+    top: 10px;   
+}
+#playweeks,#studyweeks,#workweeks, #socialweeks, #selfcareweeks, #exerciseweeks{
+    font-family: $font-stack;
+    @include font-weight(light);
+    font-size: 10px;
+    margin-left: 20px; 
+    color: $PaleBlue;   
+}
+.icon{
+    position: relative;
+    left: 80px;
+}
+.menu-section{
+    background: $Blue;
+    height: 250px;
+    border-radius: 15px;
+}
+#activity{
+    background: $DarkBlue;
+    height: 150px;
+    border-radius: 15px;
+    position: absolute;
+    top: 0px;
+    margin-top: 200px;
+    width: 180px;
+    cursor: pointer;
+}
+#activity li {
+    display: block;
+    color: $PaleBlue;
+    position: relative;
+    top: 30px;
+    right: 25px;
+    margin: 10px;
+    font-family: $font-stack;
+    @include font-weight(light);
+    font-size: 12px;
+    cursor: pointer;
+&:hover{
+        color: white;
+    }
+}
+.menu-section img{
+    width: 70px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.report{
+    color: $PaleBlue;
+    font-family: $font-stack;
+    @include font-weight(light);
+    font-size: 10px;
+    padding-left: 20px;
+    position: relative;
+    top: 20px;
+}
+.name{
+    color: $PaleBlue;
+    font-family: $font-stack;
+    @include font-weight(bold);
+    font-size: 25px;
+    padding-left: 20px;
+}
+.nameMedia{
+    display: none;
+}
+
+@media screen and (max-width: 570px) {
+    
+    body{
+        width: 600px;
+    }
+    .container{
+        width: 600px;
+        padding: 0px;
+    }
+    .grid-section{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        flex: 80%;
+        padding-right: 40px;
+        
+    }
+    #report{
+        position: relative;
+    }
+    .name{
+        display: none;
+    }
+    .menu-section img{
+        width: 150px;
+        padding: 30px;
+    }
+    .nameMedia{
+        font-size: 50px;
+        font-family: $font-stack;
+        display: block;
+        position: relative;
+        margin-left: 220px;
+        bottom: 200px;
+        color: $PaleBlue;
+    
+    }
+    .report{
+        font-size: 25px;
+        position: relative;
+        margin-left: 200px;
+        top: -150px;
+    }
+    #work, #play, #study, #exercise, #social, #selfcare{
+        position: relative;
+        top: 130px;
+    }
+    .img-property{
+        left: 500px;
+        width: 100px;
+    }   
+    .icon{
+        left: 400px;
+    }
+    .text1{
+        font-size: 30px;
+    }
+    #playhrs,#studyhrs, #workhrs, #socialhrs, #selfcarehrs, #exercisehrs{
+        font-size: 70px;
+        @include font-weight(light);
+        line-height: 1px;
+    }
+    #playweeks,#studyweeks, #workweeks, #socialweeks, #selfcareweeks, #exerciseweeks{
+        position: relative;
+        margin-left: 300px;
+        bottom: 80px;
+        font-size: 30px;
+    }
+    .work-svg,.menu-section,.TextArea, #activity, .play-svg, .selfcare-svg, .exercise-svg, .social-svg, .study-svg{
+        width: 600px; 
+        margin-left: 20px;
+    }
+    .menu-section, #activity{
+        margin-left: 50px;
+    }
+    .TextArea{
+        height: 200px;
+    }
+    #activity li{
+        display: inline;
+        font-size: 25px;
+        margin: 50px;
+    &:hover{
+        color: white;
+        }
+    }
+}
